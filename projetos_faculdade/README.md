@@ -1,0 +1,4 @@
+# Projetos Faculdade
+Este é o diretório onde irei armazenar todos os projetos que fiz ao decorrer dos meus estudos da SPTech School, onde cursei análise e desenvolvimento de sistemas. Está faculdade tem um modelo de ensino no qual nós alunos devemos apresentar um trabalho de conclusão de semestre, onde usamos tudo que aprendemos no semestre em questão e tudo que aprendemos nos semestre passado, juntando tudo em um projeto para colocar em prática os ensinamentos.
+
+This is the directory where I will store all the projects I did during my studies at SPTech School, where I studied systems analysis and development. This college has a teaching model in which we students must present a semester conclusion work, where we use everything we learned in the semester in question and everything we learned in the past semester, putting everything together in a project to put the teachings into practice.
