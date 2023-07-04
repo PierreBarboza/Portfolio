@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Hollow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Hollow&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Hollow&family=Roboto:ital,wght@0,100;0,700;1,500&display=swap');    
+/* Header Inicio */
+.header {
+    background-color: #121212   ;
+    background-size: cover;
+    border-bottom: 3px solid black;   
+}
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+}
+.titulo {
+    color: #cb9b60;
+    font-size: 45px;
+    width: fit-content;
+    font-weight: 500;
+    font-family:'Blaka Hollow' ,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.navbar {
+    color: #cb9b60;
+    width: fit-content;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+a{
+    text-decoration: none;  
+    color: unset; 
+    /* font-weight: 800 */
+   }
+.pagAtual {
+    font-weight: 800;
+}
+body{
+    background-color: #1c1622;
+    background-image: url("../assets/img/fundoBody.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+/* Header Fim */
+.containerDados{
+    float: left;
+    height: 500px;
+    width: 130vh;
+    display: flex;
+    /* justify-content: row; */
+    flex-direction: row-reverse;
+}
+.cardCadastro{
+    color: #1e1a11;
+    padding-top: 8vh;
+    height: 70vh;
+    width: 50vh;
+}
+.formularioCadastro{
+    padding-top: 1vh;
+    padding-left: 5vh;
+    height: 40vh;
+
+}
+.tipo_campo{
+    color: #1e1a11;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.inputCadastro{
+    margin: 3px;
+    height: 25px;
+    border: black solid 2px;
+    border-radius: 15px 0 15px 0;
+    width: 60%;
+    font-size: 15px;
+    outline: none;
+    transition: 160ms;
+}
+.btn{
+    color: #e02b23;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    padding: 6px;
+    transition: 150ms;
+    font-weight: 500;
+    text-decoration: none;
+}
+.loading-div {
+    width: 50px;
+    margin: auto;
+    /* display: none; */
+}
+  
+.loading-div img {
+    height: 60px;
+    width: 60px;
+    
+}
+.alerta_erro{
+    height: 40vh;
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+.card_erro{
+    border: #111111 solid 3px;
+    border-radius: 20px 0 20px 0;
+    box-shadow: 30px 26px 13px 12px #000000; 
+    color: white;
+    margin: auto;
+    width: 60%;
+    height: 65%;
+    display: none;
+    /* justify-content: space-between; */
+    flex-direction: row;
+    background-color: rgba(0,0,0,.8);
+}
+#errogif{
+    width: 20%;
+    /* display: none; */
+}
+#div_aguardar{
+    display: none;
+}
+#mensagem_erro{
+    padding-top: 5vh;
+    width: 40%;
+}
+.imgErro{
+    width: 50%;
+}
+    

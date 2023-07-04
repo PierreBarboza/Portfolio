@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RPG | Cadastro</title>
+
+
+    <script src="./js/funcoes.js"></script>
+
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Header inicio-->
+    
+    <div class="header">
+        <div class="container">
+        <div><h1 class="titulo">RPG </h1></div>
+            
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a  href="./sobreMim.html">Sobre Mim</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a  href="./login.html">Login</a>
+                </li>
+                <li  class="pagAtual">
+                    <a  href="./cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Header fim-->
+
+
+    <div class="banner">
+        <div class="containerDados">
+            <div class="cardCadastro">
+                <h2>Bem-vindo. Preparece para entrar em um mundo onde o limite é sua imaginação!</h2>
+                <div class="formularioCadastro">
+                    
+                    <span class="tipo_campo">Nome:</span><br>
+                    <input class="inputCadastro" id="nome_input" type="text" placeholder="Seu nome"><br>
+
+                    <span class="tipo_campo">E-mail:</span><br>
+                    <input class="inputCadastro" id="email_input" type="text" placeholder="meuemail@provedor.com"><br>
+
+                    <span class="tipo_campo">Senha:</span><br>
+                    <input class="inputCadastro" id="senha_input" type="password" placeholder="******"><br>
+
+                    <span class="tipo_campo">Sistema de RPG favorito:</span><br>
+                    <select class="inputCadastro" id="slt_sistemaFav">
+                        <option value="0">Selecione um Sistema</option>
+                        <option value="medieval">Medieval</option>
+                        <option value="futurista">Futurista</option>
+                        <option value="cthulhu">Cthulhu</option>
+                        <option value="faroeste">Faroeste</option>
+                        <option value="vampiro">Vampiro</option>
+                    </select><br>
+
+                    <span class="tipo_campo">Frequencia que você Joga RPG:</span><br>
+                    <select class="inputCadastro" id="slt_freq">
+                        <option value="0">Selecione uma Frequencia</option>
+                        <option value="nao jogo mais">Não jogo mais</option>
+                        <option value="jogo de vez em quando">Jogo de vez em quando</option>
+                        <option value="jogo frequentemente">Jogo frequentemente</option>
+                        <option value="queria Aprender">Queria Aprender</option>
+                    </select><br>
+
+                    <span class="tipo_campo">Você está ciente e aceita que outros usuários 
+                    podem ver seu e-mail e entrar em contato com você?</span><br>
+                    <select class="inputCadastro" id="slt_termos">
+                        <option value="0">Aceita?</option>
+                        <option value="1">Sim, estou ciente e aceito</option>
+                        <option value="2">Não aceito</option>
+                    </select><br>
+
+                    <button class="btn" onclick="cadastrar()">Cadastrar</button><br>
+
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/icons/loadindado.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alerta_erro">
+        
+        <div class="card_erro" id="cardErro">
+            <div id="mensagem_erro"></div>
+            
+            <img src="./assets/img/gifhome3.gif" id="errogif" >
+            
+        </div>
+        
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var sistemaFavVar = slt_sistemaFav.value;
+        var freqVar = slt_freq.value;
+        var termos = slt_termos.value;
+
+        if (
+            nomeVar == "" || emailVar == "" || senhaVar == "" ||
+            sistemaFavVar == 0 || freqVar == 0
+        ) {
+            cardErro.style.display = "flex"
+            mensagem_erro.innerHTML = "You shall not pass!!!Todos os campos precisam ser preenchidos";
+            errogif.style.display = "block"
+            finalizarAguardar();
+            return false;
+        }else if (
+            termos != "1"
+        ){
+            cardErro.style.display = "flex"
+            mensagem_erro.innerHTML = "Você precisa concordar com os termos da cominudade para se juntar a nós!";
+            errogif.style.display = "block"
+            finalizarAguardar();
+            return false;
+        }else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                sistemaFavServer: sistemaFavVar,
+                freqServer: freqVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

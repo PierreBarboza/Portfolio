@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade</title>
+
+    <link rel="stylesheet" href="../css/areaLogadaMetricas.css">
+
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+
+        <div class="header-left">
+
+            <h1>RPG</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./criarPersonagem.html">
+                    <h3>Criar personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarPersonagens.html">
+                    <h3>Visualizar seus personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./sistemaJogar.html">
+                    <h3>Sistemas que quer jogar</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarJogadores.html">
+                    <h3>Visualizar jogadores</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./metricas.html">
+                    <h3>Crescimento da comunidade</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+
+
+            <div class="cards">
+                
+                <div style="width: 100%; height: 10%; display:flex; justify-content: flex-end; margin-bottom: 4px;"> 
+                <div style="border: black solid 3px; width: 30%; height: 100%; background-color: #212124;">
+                    Total de usuarios cadastrados:<br><span id="spanUsuarios" style="font-size: 30px;">10</span>
+                </div>
+                </div>
+                <div class="cardTitulo">
+                    <div class="cabecario">
+                        <H3>Sistemas Favoritos da galera</H3>
+                    </div>
+                    <div class="cabecario">
+                        <H3>Frequencia que a Galera Joga</H3>
+                    </div>
+                </div>
+                
+                <div class="cards_Graf">
+                <div class="cardGraf">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="cardGraf">
+                    <canvas id="myChart2"></canvas>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    var dados = []
+    window.onload = function metricas() {
+        validarSessao()
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        
+
+        fetch(`/usuarios/metricas`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    feed.appendChild(mensagem);
+                    finalizarAguardar();
+                    throw "Nenhum resultado encontrado!!";
+                }
+                    resposta.json().then(function (resposta) {
+                    var feed = document.getElementById("feed_container");
+                    // Aqui eu faço variaveis com o a resposta do meu banco.
+                    var cth = resposta.filter(res => res.sistemaFav == 'cthulhu')
+                    var medie = resposta.filter(res => res.sistemaFav == 'medieval')
+                    var fut = resposta.filter(res => res.sistemaFav == 'futurista')
+                    var faro = resposta.filter(res => res.sistemaFav == 'faroeste')
+                    var vamp = resposta.filter(res => res.sistemaFav == 'vampiro')
+
+                    var naoJogo = resposta.filter(res => res.freq == 'nao jogo mais')
+                    var vezEnquando = resposta.filter(res => res.freq == 'jogo de vez em quando')
+                    var frequentemente = resposta.filter(res => res.freq == 'jogo frequentemente')
+                    var aprender = resposta.filter(res => res.freq == 'queria Aprender')
+                    
+                    var totalUser = resposta.filter(res => res.idUsuario)
+                    spanUsuarios.innerHTML = totalUser.length
+                    
+                    dados = [
+                        cth.length,
+                        medie.length,
+                        fut.length,
+                        faro.length,
+                        vamp.length
+                    ]
+
+                    dadosfreq = [
+                    naoJogo.length,
+                    vezEnquando.length,
+                    frequentemente.length,
+                    aprender.length
+                    ]
+
+                    
+                    
+                    
+                    //-- Começo do grafico --//
+                    var corGraf = ['#24652b', '#8b541f', '#6d39c1', '#8b0e04', '#4a0f16']
+
+                    const labels = [
+                        'Cthulhu',
+                        'Medieval',
+                        'Futurista',
+                        'Faroeste',
+                        'Vampiro',
+                    ];
+
+                    console.log(dados)
+                    const data = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'My First dataset',
+                            backgroundColor: corGraf,
+                            borderColor: 'black',
+                            data: dados
+                        }]
+                    };
+                    const config = {
+                        type: 'pie',
+                        data: data,
+                        options: {}
+                    };
+                    const myChart = new Chart(
+                    document.getElementById('myChart'),
+                    config
+                    );
+                    //-- Fim do grafico --//
+
+
+                    //-- Começo do grafico --//
+                    var corGraf = ['#ede504', '#1E90FF', '#EC7D10', '#4c3c1c']
+
+                    const labels2 = [
+                        'Nao Jogo Mais',
+                        'Jogo de Vez em Quando',
+                        'Jogo Frequentemente',
+                        'Queria Aprender',
+                    ];
+
+                    console.log(dados)
+                    const data2 = {
+                        labels: labels2,
+                        datasets: [{
+                            label: 'My First dataset',
+                            backgroundColor: corGraf,
+                            borderColor: 'black',
+                            data: dadosfreq
+                        }]
+                    };
+                    const config2 = {
+                        type: 'pie',
+                        data: data2,
+                        options: {}
+                    };
+                    const myChart2 = new Chart(
+                    document.getElementById('myChart2'),
+                    config2
+                    );
+                    //-- Fim do grafico --//
+                })
+
+            } else {
+                throw ('Houve um erro na API!');
+
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+
+        });
+         }
+        function salvarRota() {
+        let Escolha_RotaVar = select_rota.value;
+        localStorage.setItem("Escolha_Rota", `${Escolha_RotaVar}`)
+        window.location.href = "empOnibus.html"
+    }
+
+</script>

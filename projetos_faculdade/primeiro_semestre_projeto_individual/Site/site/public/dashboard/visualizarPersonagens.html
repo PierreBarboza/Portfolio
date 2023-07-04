@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seus Personagem</title>
+
+    <link rel="stylesheet" href="../css/visualizarPersonagens.css">
+    
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+
+        <div class="header-left">
+
+            <h1>RPG</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./criarPersonagem.html">
+                <h3>Criar personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarPersonagens.html">
+                    <h3>Visualizar seus personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./sistemaJogar.html">
+                    <h3>Sistemas que quer jogar</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarJogadores.html">
+                    <h3>Visualizar jogadores</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./metricas.html">
+                    <h3>Crescimento da comunidade</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+        <div class="dash" id="placar">
+                            
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script> 
+let parametro = ""  
+    window.onload = function listarPersonas() {
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    
+
+        var fkUsuarioPersonaVar = sessionStorage.ID_USUARIO;
+
+        fetch(`/usuarios/listarPersonas/${fkUsuarioPersonaVar}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    feed.appendChild(mensagem);
+                    
+                    throw "Nenhum resultado encontrado!!";
+                }
+                  resposta.json().then(function (resposta) {
+                    var feed = document.getElementById("feed_container");
+                      for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i]; // i é a posição 0
+                            console.log(publicacao);
+                            
+                            // Aqui eu crio as var (let é a mesma coisa que var) dos dados que quero apresentar no site:
+                            // Temos que colocar publicação.Nome do campo do banco de dados:
+                            let userNomePersonagem = publicacao.nomePersonagem
+                            let userHistoriaPersonagem = publicacao.historiaPersonagem
+                            let userRacaPersonagem = publicacao.raca
+                            let userClassePersonagem = publicacao.classe
+                            let userImg = publicacao.valorURL
+                            let idpersonaDelet = publicacao.idPersonagem
+                            parametro = idpersonaDelet
+                         
+                            // Aqui eu aponto para onde meus dados irão para serem apresentados:
+                          
+                            placar.innerHTML += `<div class="divPersonagem">
+                            <img src="${userImg}" width="200vh"><br> <div> <div>Nome: ${userNomePersonagem}</div><div>Raça: ${userRacaPersonagem}</div><div>Classe: ${userClassePersonagem}</div> Historia: ${userHistoriaPersonagem} 
+                            <a onclick="apagarPersona(${idpersonaDelet})">
+                            <h5 class="h3Personagem">Apagar Personagem</h5>
+                            </a>
+                            </div>
+                            
+                            
+                            `
+                          }
+                    
+                })
+            } else {
+                throw ('Houve um erro na API!');
+                
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            
+        });
+    }
+    function apagarPersona(parametro){
+        let deletPersonaVar = parametro
+        
+        
+        fetch(`/usuarios/deletar/${deletPersonaVar}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert(sessionStorage.getItem("NOME_USUARIO") + " Seu personagem foi deletado com sucesso");
+                window.location = "/dashboard/visualizarPersonagens.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    
+
+
+
+    }
+    
+</script>

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  overflow: hidden;
+}
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-right: 3px solid #cb9b60;
+  background-color: #cb9b60;
+}
+.header-left h1 {
+  color: #431708;
+}
+.hello h3 {
+  color: #431708;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.hello h3 span {
+  font-weight: 800;
+}
+.btn-nav {
+    border: #431708 solid 3px;
+    color: #431708;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    padding: 6px;
+    transition: 150ms;
+    font-weight: 500;
+    text-decoration: none;
+}
+.btn-nav-white {
+    border: #431708 solid 3px;
+    color: #431708;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    padding: 6px;
+    transition: 150ms;
+    font-weight: 500;
+    text-decoration: none;
+}
+.btn-nav-white h3 {
+  color: #431708;
+  padding: 0;
+  margin: 0;
+}
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+.btn-logout {
+    border: #431708 solid 3px;
+    color: #431708;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    padding: 6px;
+    transition: 150ms;
+    font-weight: 500;
+    text-decoration: none;
+}
+.dash {
+  width: 75%;
+  position: relative;
+  top: 0;
+  left: 25%;
+  background-color: #431708;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.cards {
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+}
+.cardTitulo{
+    border: black solid 3px;
+    background-color: #212124;
+    width: 60.5%;
+    height:10%;
+    display: flex;
+}
+.cabecario{
+    border-right: black solid 3px;
+    background-color: #212124;
+    box-sizing: border-box;
+    z-index: 7;
+    width: 50%;
+    height:100%;
+}
+.cards_Graf{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    color: white;
+    align-items: center;
+    flex-direction: row;
+}
+.cardGraf{
+    width: 100vh;
+    border: black solid 3px;
+    height: 100%; 
+    width: 30%;
+    background-color: #212124;
+}
+.cards_jog {  
+  height: 300px;
+  background-color: #191d20;
+  width: 70vw;
+  flex-direction: column;
+  overflow-y: scroll  ;
+  overflow-x: hidden;
+  overflow: none;
+  padding: 20px;
+  border-radius: 50px 50px 50px 50px;
+  display: flex;
+  box-shadow: 0 0 1em rgb(95, 95, 95)
+}
+.cards_jog::-webkit-scrollbar{
+  display: none;
+}

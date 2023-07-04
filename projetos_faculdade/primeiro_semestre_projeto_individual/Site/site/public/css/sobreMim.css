@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka+Hollow&family=Roboto:wght@500&display=swap');
+/* Header Inicio */
+.header {
+    background-color: #121212   ;
+    background-size: cover;
+    border-bottom: 3px solid black;   
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+}
+.titulo {
+    color: #cb9b60;
+    font-size: 45px;
+    width: fit-content;
+    font-weight: 500;
+    font-family:'Blaka Hollow' ,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.navbar {
+    color: #cb9b60;
+    width: fit-content;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+a{
+    text-decoration: none;  
+    color: unset; 
+    /* font-weight: 800 */
+   }
+.pagAtual {
+    font-weight: 800;
+}
+body{
+    background-color: #1c1622;
+    margin: 0;
+}
+/* Header Fim */
+
+.divGeral{
+    height: 500vh;
+    padding-right: 5px;
+    
+}
+.primeira{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.card_A{
+    width: 40%;
+    height: 50%;
+    text-align: center;
+}
+.card_B{
+    padding-left: 20px;
+    width: 20%;
+    
+}
+.textoCorpo{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    
+}
+.segunda{
+    height: 14%;
+    display: flex;
+    justify-content: space-between;
+}

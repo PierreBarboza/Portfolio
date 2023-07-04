@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas</title>
+
+    <link rel="stylesheet" href="../css/areaLogadaSistemas.css">
+    
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload=validarSessao()>
+
+    <div class="janela">
+
+
+        <div class="header-left">
+
+            <h1>RPG</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./criarPersonagem.html">
+                    <h3>Criar personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarPersonagens.html">
+                    <h3>Visualizar seus personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./sistemaJogar.html">
+                    <h3>Sistemas que quer jogar</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarJogadores.html">
+                    <h3>Visualizar jogadores</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./metricas.html">
+                    <h3>Crescimento da comunidade</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div class="cards">
+               <H3>Bem vindo a nossa comunidade</H3> <br> Por favor nos informe o sistema que você mais deseja jogar:<br>
+                <select id="slt_sistemaPrimeira" class="inputCadastro"><br>
+                    <option value="0">Selecione um sistema:</option>
+                    <option value="medieval">Medieval</option>
+                    <option value="faroeste">Faroeste</option>
+                    <option value="vampiro">Vampiro</option>
+                    <option value="cthulhu">Cthulhu</option>
+                    <option value="futurista">Futurista</option>
+                </select><br>
+                Por favor nos informe a segunda opção:<br>
+                <select id="slt_sistemaSegunda" class="inputCadastro"><br>
+                    <option value="0">Selecione um sistema:</option>
+                    <option value="medieval">Medieval</option>
+                    <option value="faroeste">Faroeste</option>
+                    <option value="vampiro">Vampiro</option>
+                    <option value="cthulhu">Cthulhu</option>
+                    <option value="futurista">Futurista</option>
+                </select>
+                <button class="btn" onclick="cadastrarSistema()">Informar</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script>
+    function cadastrarSistema() {
+        
+        var sistemaPrimeiraVar = slt_sistemaPrimeira.value;
+        var sistemaSegundaVar = slt_sistemaSegunda.value;
+        var fkUsuarioVar = sessionStorage.ID_USUARIO;
+        
+        if (
+            sistemaPrimeiraVar == 0 || sistemaSegundaVar == 0 
+            
+        ) {
+            alert("Informe os sistemas que deseja jogar")
+            
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+        
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarSistema", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                sistemaPrimeiraServer: sistemaPrimeiraVar,
+                sistemaSegundaServer: sistemaSegundaVar,
+                fkUsuarioServer : fkUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                
+                
+                    window.location = "visualizarJogadores.html";
+                
+                
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

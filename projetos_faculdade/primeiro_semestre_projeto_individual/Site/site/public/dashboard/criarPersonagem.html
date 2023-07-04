@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie Seu Personagem</title>
+
+    <link rel="stylesheet" href="../css/criarPersonagem.css">
+    
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao()">
+
+    <div class="janela">
+
+
+        <div class="header-left">
+
+            <h1>RPG</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./criarPersonagem.html">
+                    <h3>Criar personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarPersonagens.html">
+                    <h3>Visualizar seus personagem</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./sistemaJogar.html">
+                    <h3>Sistemas que quer jogar</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./visualizarJogadores.html">
+                    <h3>Visualizar jogadores</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./metricas.html">
+                    <h3>Crescimento da comunidade</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="dash">
+            <div class="cards">
+                <div class="cardsInterno" id="personagemEscolhidoIMG">
+                   
+
+                </div>
+                <div class="cardsInterno2">              
+                    Escolha a raça que você quer: <br>
+                    <select id="stl_racaPerso" class="stl">
+                        <option value="0">Escolha a raça</option>
+                        <option value="Anão">Anão</option>
+                        <option value="Elfo">Elfo</option>
+                        <option value="Humano">Humano</option>
+                        <option value="Orc">Orc</option>
+                    </select><br>
+
+                    Escolha a classe que você quer: <br>
+                    <select id="slt_classePerso" class="stl">
+                        <option value="0">Escolha a classe</option>
+                        <option value="Arqueiro">Arqueiro</option>
+                        <option value="Barbaro">Bárbaro</option>
+                        <option value="Bardo">Bardo</option>
+                        <option value="Bruxo">Bruxo</option>
+                        <option value="Druida">Druida</option>
+                        <option value="Guerreiro">Guerreiro</option>
+                    </select><br>
+                    <button onclick="persona()" class="btn">Ver Personagem</button>
+                    <button onclick="salvarPersona()" class="btn" id="btn2">Salvar Personagem</button>
+                    <div class="disloadin" id="loadin">
+
+                    </div>
+                </div> 
+                 <div class="testoUser">
+                    Insira o nome do seu personagem: <br>
+                    <input type="text" class="ipt" id="ipt_nomePersonagem" onkeyup="aparecerBotao()"><br>
+                    Conte a historia do seu personagem: <br>
+                    <textarea class="ipt2" id="ipt_historiaPersonagem">
+                    </textarea>
+                 </div>
+                
+            </div>
+            <div class="imgback">
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script>    
+    var idUsuariosLogVar = sessionStorage.ID_USUARIO;
+    var idpersonagemEscolhidoVar = ""
+    function persona(){
+
+        var personagem = stl_racaPerso.value;
+        var classe = slt_classePerso.value;
+        classeEscolhida = classe;
+        personagemEscolhido = personagem;
+        if (personagem == 0 || classe == 0){
+            alert("Você deve preencer todos os campos")
+        } else {
+            
+
+            fetch(`/usuarios/persona/${personagem}/${classe}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    feed.appendChild(mensagem);
+                    
+                    throw "Nenhum resultado encontrado!!";
+                }
+                  resposta.json().then(function (resposta) {
+                    var feed = document.getElementById("feed_container");
+                      for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i]; // i é a posição 0
+                            console.log(publicacao);
+                            
+                            // Aqui eu crio as var (let é a mesma coisa que var) dos dados que quero apresentar no site:
+                            // Temos que colocar publicação.Nome do campo do banco de dados:
+                            let valorIMG = publicacao.valorURL
+                            let idpersonagem = publicacao.idapendise
+                            idpersonagemEscolhidoVar = idpersonagem
+                            var img = document.getElementById(`personagemEscolhidoIMG`)
+                            img.style.backgroundImage = `url("${valorIMG}")`
+                            
+                            
+                          }
+                            
+                })
+            } else {
+                throw ('Houve um erro na API!');
+                
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            
+        });
+        }  
+        
+    }
+    function salvarPersona(){
+        var nomePersonagemVar = ipt_nomePersonagem.value;
+        var historiaPersonagemVar = ipt_historiaPersonagem.value;
+
+        fetch("/usuarios/salvarPersona", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomePersonagemServer: nomePersonagemVar,
+                historiaPersonagemServer: historiaPersonagemVar,
+                idpersonagemEscolhidoServer: idpersonagemEscolhidoVar,
+                idUsuariosLogServer: idUsuariosLogVar
+
+    
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+            loadin.style.display ="block"
+            // alert("Seu personagem foi Criado com sucesso") 
+            setTimeout(() => {
+                window.location.href="./visualizarPersonagens.html"
+            }, 2000);
+        })
+
+        return false;
+    }
+    function aparecerBotao(){
+        btn2.style.display = "block"
+    }
+    
+</script>
