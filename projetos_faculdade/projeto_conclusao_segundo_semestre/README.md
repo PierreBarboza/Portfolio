@@ -1,4 +1,4 @@
-# Projeto-PI
+# Projeto-PI Segundo Semestre
 Este foi o projeto do segundo semestre da faculdade. Foi quando eu tive meu primeiro contato com JAVA, uma linguagem que gostei muito de trabalhar, por mais que seja taxada de verbosa e ser fortemente tipada, acredito que a interpretação do código, se bem feito, é mais fácil entender. Nesse projeto nós desenvolvemos uma ferramenta em JAVA que era responsável por monitorar um os processos e uso dos componente de um computador. A qui também tivemos nosso primeiro contado com maquinas virtuais. Agradeço a meus colegas e amigos Pedro Mendonça, Miguel Mendes, Hiago Victor e Julia Duran pelo trabalho em equipe e a entrega que foi muito elogiada tanto pelos professores como pelos mentores. 
 
 
