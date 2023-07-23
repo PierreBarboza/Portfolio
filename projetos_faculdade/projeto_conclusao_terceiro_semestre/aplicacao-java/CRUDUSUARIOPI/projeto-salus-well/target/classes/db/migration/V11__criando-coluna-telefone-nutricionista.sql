@@ -1,0 +1,1 @@
+ALTER TABLE nutricionistas ADD  telefone char(13);

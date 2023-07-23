@@ -1,0 +1,2 @@
++--Resultado--+
+Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}Cliente{comorbidade=true, ativo=true}+-------------+

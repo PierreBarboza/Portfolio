@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/CRUD USUARIO PI.iml" filepath="$PROJECT_DIR$/.idea/CRUD USUARIO PI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projeto-salus-well/projeto-salus-well.iml" filepath="$PROJECT_DIR$/projeto-salus-well/projeto-salus-well.iml" />
+      <module fileurl="file://$PROJECT_DIR$/treino/treino.iml" filepath="$PROJECT_DIR$/treino/treino.iml" />
+    </modules>
+  </component>
+</project>

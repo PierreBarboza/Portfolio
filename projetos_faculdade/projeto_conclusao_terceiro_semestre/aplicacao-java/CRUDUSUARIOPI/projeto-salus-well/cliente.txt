@@ -1,0 +1,36 @@
+00CLIENTE20-05-2023 17:21:3501
+02nullvvvv                vvvv@gmail.com      string              14 true
+010000000001
+00CLIENTE20-05-2023 17:27:3301
+02nullopa                 opa@gmail.com       string              14 true
+010000000001
+00CLIENTE20-05-2023 17:32:0001
+02nullbbb                 bbb@gmail.com       string              14 true
+010000000001
+00CLIENTE21-05-2023 14:40:3701
+02nullGustavo             gustavo@gmail.com   string              14 true
+010000000001
+00CLIENTE21-05-2023 14:46:3101
+02nullPedrinho            pedrinho@gmail.com  string              14 true
+010000000001
+00CLIENTE24-05-2023 11:02:1701
+02nullstring              cliente@gmail.com   string              14 true
+010000000001
+00CLIENTE25-05-2023 09:57:0601
+02nullstring              gustavo@gmail.com   string              14 true
+010000000001
+00CLIENTE26-05-2023 18:16:4501
+02nullMoises              moises@gmail.com    string              14 true
+010000000001
+00CLIENTE27-05-2023 13:41:1401
+02nullteste               teste@123.com       rua rua rua         14 true
+010000000001
+00CLIENTE27-05-2023 18:24:2501
+02nullstring              opa@gmail.com       string              14 true
+010000000001
+00CLIENTE27-05-2023 19:34:0301
+02nullLeo Chefe           chefe@gmail.com     string              14 true
+010000000001
+00CLIENTE27-05-2023 19:40:1801
+02nullGustavo Assunto     assunto@gmail.com   string              14 true
+010000000001

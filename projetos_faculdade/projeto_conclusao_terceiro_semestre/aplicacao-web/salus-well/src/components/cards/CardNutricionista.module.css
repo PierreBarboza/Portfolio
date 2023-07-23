@@ -1,0 +1,81 @@
+.main_user_home_screen {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 16px;
+    width: 100%;
+    border-radius: 16px;
+    overflow: auto;
+}
+
+p {
+    font-weight: 100;
+}
+
+.imgAvatar img {
+    width: 100px;
+    min-width: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.main_user_home_screen .main_card_user_home {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+    min-height: auto;
+    padding: 20px;
+    color: var(--black);
+    border-radius: 10px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.headerBiografy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    border-top: 2px dotted rgba(0, 0, 0, 0.178);
+    border-left: 2px dotted rgba(0, 0, 0, 0.178);
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.178);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.headerBiografy .header {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.group_button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    border-top: 2px dotted rgba(0, 0, 0, 0.178);
+    border-right: 2px dotted rgba(0, 0, 0, 0.178);
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.178);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.group_button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 60%;
+}

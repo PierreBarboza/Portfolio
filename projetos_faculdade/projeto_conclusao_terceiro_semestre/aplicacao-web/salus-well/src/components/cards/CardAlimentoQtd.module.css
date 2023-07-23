@@ -1,0 +1,62 @@
+.card {
+    display: flex;
+    width: 92%;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px 0px;
+}
+
+.card .alimento {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.card .alimento img {
+    width: 10%;
+    height: 5%;
+    min-width: 80px;
+    margin-left: 10px;
+    min-height: 60px;
+    border-radius: 6px;
+}
+
+.card .alimento .group_title p:first-child {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.card .quantidade {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    width: 48%;
+}
+
+.card .quantidade p {
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.card .quantidade button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.card .quantidade button img {
+    width: 22px;
+}
+
+.card .button_lixeira {
+    cursor: pointer;
+    position: relative;
+    z-index: +1;
+    left: 40%;
+    top: 25px;
+    width: 30px;
+    height: 30px;
+}

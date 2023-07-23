@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: salus.well.projetosaluswell.domain.form.DiarioAlimentarFormTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.58 s - in salus.well.projetosaluswell.domain.form.DiarioAlimentarFormTest

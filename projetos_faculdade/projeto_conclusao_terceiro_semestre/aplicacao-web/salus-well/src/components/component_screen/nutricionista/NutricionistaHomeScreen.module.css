@@ -1,0 +1,110 @@
+.main_user_home_screen {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    height: 91vh;
+    border-radius: 16px;
+}
+
+.main_user_home_screen .main_card_user_home {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 40%;
+    min-height: 180px;
+    padding: 16px;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 8px;
+}
+
+.main_user_home_screen .main_card_user_home_alimentos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 40%;
+    min-height: 180px;
+    padding: 16px;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 8px;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    height: 80%;
+}
+
+.main_user_home_screen .main_card_user_home_alimentos .title_main_card_alimentos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 80%;
+    align-items: flex-end;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card .title {
+    color: var(--red);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main_user_home_screen .main_card_user_home_alimentos .title_main_card_alimentos .title {
+    color: var(--red);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card .sub_title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.main_user_home_screen .main_card_user_home_alimentos .title_main_card_alimentos .sub_title_alimentos {
+    font-weight: bold;
+    font-size: large;
+    text-align: end;
+}
+
+.main_user_home_screen .main_card_user_home .img_main_card {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    border-left: 1px solid var(--opacity-black);
+}
+
+.main_user_home_screen .main_card_user_home .img_main_card img {
+    width: 100%;
+}
+
+.main_user_home_screen .main_card_user_home_alimentos .img_main_card {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 80%;
+    border-right: 1px solid var(--opacity-black);
+}
+
+.main_user_home_screen .main_card_user_home_alimentos .img_main_card img {
+    width: 100%;
+}

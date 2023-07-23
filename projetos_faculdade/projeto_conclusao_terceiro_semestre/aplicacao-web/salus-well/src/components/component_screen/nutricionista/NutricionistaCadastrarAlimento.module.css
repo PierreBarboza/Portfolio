@@ -1,0 +1,135 @@
+.main_user_home_screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    min-height: 100vh;
+    height: max-content;
+    border-radius: 16px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.formulario .conteudo {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+}
+
+.formulario .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.group_comorbidades {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.group_buttons_checked {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 6vh;
+}
+
+.group_buttons_checked .item_check {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: var();
+    width: 45%;
+    border: 1.2px solid var(--light-green);
+    border-bottom: 2px solid var(--dark-green);
+    background-color: var(--light-lower-green);
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    bottom: 8px;
+}
+
+label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #679160;
+    background-color: white;
+    border-radius: 4px;
+}
+
+input[type="checkbox"]:checked+label::before {
+    background-color: #679160;
+    background-image: url('../../../assets/icons/valid-icon-white.png');
+    background-size: 14px;
+    background-repeat: no-repeat;
+}
+
+.group_valor_nutricional {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.group_valor_nutricional .input_valor_nutricional input {
+    width: 100%;
+    height: 6vh;
+    border: none;
+    text-align: end;
+    border-radius: 3px;
+    border-bottom: 2px solid #51734E;
+    padding-right: 1px;
+    background-color: var(--light-lower-green);
+}
+
+.group_valor_nutricional .input_valor_nutricional input:focus {
+    outline: none;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: #FF5451;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.group_buttons_cadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

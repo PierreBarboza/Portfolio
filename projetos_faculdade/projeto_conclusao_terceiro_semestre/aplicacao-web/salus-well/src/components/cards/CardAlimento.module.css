@@ -1,0 +1,142 @@
+.card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 26%;
+    min-width: 200px;
+    height: inherit;
+    min-height: 320px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(105%, 105%);
+    background-color: whitesmoke;
+}
+
+.card .alimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-size: cover;
+    background-position-y: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.card .alimento p {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.811)
+}
+
+.card .alimento .title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.card .propriedades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+
+.card .comorbidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--opacity-black);
+    width: 90%;
+    margin: auto;
+    height: 30%;
+}
+
+.card .comorbidade p {
+    font-size: smaller;
+}
+
+.card .comorbidade img {
+    width: 14px;
+}
+
+/* CARD SELECIONADO */
+
+.card_selecionado {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 26%;
+    min-width: 200px;
+    height: inherit;
+    min-height: 320px;
+    border-radius: 20px;
+    background-color: var(--light-green);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    transform: scale(105%, 105%);
+    transition: all .3s ease-in-out;
+}
+
+.card_selecionado .alimento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    opacity: 50%;
+    background-size: cover;
+    background-position-y: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.card_selecionado .alimento p {
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.811)
+}
+
+.card_selecionado .alimento .title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.card_selecionado .propriedades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+
+.card_selecionado .comorbidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--opacity-black);
+    width: 90%;
+    margin: auto;
+    height: 30%;
+}
+
+.card_selecionado .comorbidade p {
+    font-size: smaller;
+}
+
+.card_selecionado .comorbidade img {
+    width: 14px;
+}

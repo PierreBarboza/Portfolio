@@ -1,0 +1,72 @@
+.main_user_home_screen {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 100%;
+    height: 35vh;
+    border-radius: 16px;
+}
+
+.main_user_home_screen .main_card_user_home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+    min-height: 180px;
+    padding: 1rem;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 8px;
+}
+
+.main_card_user_home .title_main_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+}
+
+.main_card_user_home .title_main_card .title_meal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+}
+
+.main_card_user_home .title_main_card .button_consumption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card #title {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card #sub_title {
+    font-weight: normal;
+    font-size: medium;
+}
+
+.main_user_home_screen .main_card_user_home .img_alimento {
+    display: flex;
+    align-items: flex-start;
+    width: 25%;
+    height: 100%;
+}
+
+.main_user_home_screen .main_card_user_home .img_alimento img {
+    width: 100%;
+}

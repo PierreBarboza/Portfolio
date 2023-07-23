@@ -1,0 +1,166 @@
+.main_user_perfil_screen {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    height: 91vh;
+    border-radius: 16px;
+}
+
+.main_user_perfil_screen .main_card_user_perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+    height: 100%;
+    min-height: 180px;
+    padding: 30px;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 8px;
+    overflow: auto;
+}
+
+.header_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.body_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/*------------- Left Content*/
+.section_left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 45%;
+}
+
+.section_left div {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px 5px 0px;
+}
+
+.avatar {
+    border: 1px solid red;
+    width: 80px;
+    height: 80px;
+    border-radius: 45px;
+}
+
+.input {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    border-bottom: 3px solid #679160;
+    background-color: #f3f3f3;
+    height: 38px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+    display: inline !important;
+}
+
+.campos label {
+    line-height: 20px !important;
+    cursor: auto !important;
+    display: flex;
+    padding-left: 0px !important;
+    bottom: none !important;
+}
+
+.campos label::before {
+    content: none;
+    position: none;
+    left: 0px !important;
+    width: 0px !important;
+    height: 0px !important;
+    border: none !important;
+    background-color: none !important;
+    border-radius: none !important;
+}
+
+.section_left span {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.area_botao {
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+}
+
+.btn_editar,
+.btn_salvar,
+.btn_cancelar {
+    transition: all 0.5s;
+}
+
+.section_left button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/*------------- Right Content*/
+.section_right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 45%;
+}
+
+.section_right div {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px 5px 0px;
+}
+
+.section_right span {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.comorbidades {
+    display: flex;
+    flex-direction: column;
+}
+
+.comorbidades div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+}
+
+.comorbidades input {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.comorbidades span {
+    display: flex;
+}

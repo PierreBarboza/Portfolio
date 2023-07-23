@@ -1,0 +1,80 @@
+.main_user_home_screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 100%;
+    height: 35vh;
+    border-radius: 16px;
+}
+
+.main_user_home_screen .main_card_user_home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    padding: 1rem;
+    width: 100%;
+    height: 90%;
+    min-height: 150px;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 8px;
+}
+
+.main_card_user_home .title_main_card {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
+
+.main_card_user_home .title_main_card .title_meal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+}
+
+.main_card_user_home .title_main_card .group_button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 60%;
+}
+
+.main_card_user_home .title_main_card .group_button .button_consumo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    align-self: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card #title {
+    color: var(--black);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card #sub_title {
+    font-weight: normal;
+    font-size: medium;
+}
+
+.main_user_home_screen .main_card_user_home .img_alimento {
+    display: flex;
+    align-items: flex-start;
+    width: 25%;
+    height: 100%;
+}
+
+.main_user_home_screen .main_card_user_home .img_alimento img {
+    width: 100%;
+    height: 100%;
+}

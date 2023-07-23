@@ -1,0 +1,57 @@
+.group_itens {
+    position: fixed;
+    z-index: +10;
+    right: 0;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    height: 120px;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.301) 0px 5px 15px 0px;
+}
+
+.group_itens:hover {
+    width: 300px;
+}
+
+.icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.icon img {
+    width: 50px;
+    margin-left: 5px;
+}
+
+.itens_hidden {
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.itens_hidden p {
+    text-align: center;
+    height: 30%;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.group_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70%;
+}
+
+.group_itens:hover .itens_hidden {
+    display: block;
+}

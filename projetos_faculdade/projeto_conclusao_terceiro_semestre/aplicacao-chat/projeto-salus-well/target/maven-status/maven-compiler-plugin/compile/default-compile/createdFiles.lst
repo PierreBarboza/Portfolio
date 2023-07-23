@@ -1,0 +1,6 @@
+salus/well/projetosaluswell/chat/model/Message.class
+salus/well/projetosaluswell/chat/controller/ChatController.class
+salus/well/projetosaluswell/chat/model/Status.class
+salus/well/projetosaluswell/chat/config/WebSocketCorsConfig.class
+salus/well/projetosaluswell/ProjetoSalusWellApplication.class
+salus/well/projetosaluswell/chat/config/WebSocketConfig.class

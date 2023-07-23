@@ -1,0 +1,159 @@
+.main_user_search_food {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    height: 91vh;
+    border-radius: 16px;
+}
+
+.main_user_search_food .filtro {
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main_user_search_food .filtro .input_pesquisar {
+    width: 40%;
+    border: 1px solid var(--opacity-black);
+    border-radius: 20px;
+    padding-left: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    height: 30px;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: all .3s ease-in-out;
+}
+
+.main_user_search_food .filtro input:focus {
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.47);
+}
+
+.main_user_search_food .filtro .icone_lupa {
+    cursor: pointer;
+    position: relative;
+    right: 24%;
+    top: 15%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    opacity: 60%;
+    background-image: url('../../../assets/icons/lupa.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.main_user_search_food .filtro select {
+    width: 16%;
+    border: 1px solid var(--opacity-black);
+    border-radius: 20px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.main_user_search_food .group_card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-self: center;
+    overflow: auto;
+    width: 100%;
+    height: 77%;
+    padding: 10px;
+    min-height: 300px;
+}
+
+.group_search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 27vw;
+    height: 5vh;
+    padding: 16px;
+    border-radius: 30px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inputSearch input {
+    font-size: 1em;
+    width: 20vw;
+    background: #FFFFFF;
+    border: none;
+}
+
+.inputSearch input:focus {
+    outline: 0;
+}
+
+.inputSearch img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.group_search select {
+    width: 20%;
+}
+
+.group_select {
+    width: 35%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+    /* border: 1px solid red; */
+}
+
+.group_select select {
+    width: 80%;
+    background-color: white;
+    border: none;
+    padding-left: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.group_select .group_text_item_modal {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.274);
+    border-radius: 50px;
+    width: 60%;
+    padding: 2px;
+    opacity: 70%;
+}
+
+.group_select .group_text_item_modal p:first-child {
+    text-align: center;
+    background-color: rgba(45, 45, 45, 0.482);
+    font-weight: bold;
+    width: 22px;
+    border-radius: 50px;
+    padding: 3px;
+    font-size: smaller;
+}
+
+.group_select .group_text_item_modal p:last-child {
+    font-size: small;
+}

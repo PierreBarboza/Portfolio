@@ -1,0 +1,99 @@
+.main_user_home_screen {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.main_user_home_screen .main_card_user_home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+    height: 40%;
+    min-height: 180px;
+    padding: 16px;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 80%;
+    border-right: 1px solid var(--opacity-black);
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card .title {
+    color: var(--red);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card .sub_title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.main_user_home_screen .main_card_user_home .img_main_card {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.main_user_home_screen .main_card_user_home .img_main_card img {
+    width: 100%;
+}
+
+.areaSearch {
+    margin: 10px 0px 5px 0px;
+}
+
+.inputSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 27vw;
+    height: 5vh;
+    padding: 16px;
+    border-radius: 30px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inputSearch input {
+    font-size: 1em;
+    width: 20vw;
+    background: #FFFFFF;
+    border: none;
+}
+
+.inputSearch input:focus {
+    outline: 0;
+}
+
+.inputSearch img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.group_card {
+    overflow: auto;
+    height: min-content;
+    max-height: 600px;
+}

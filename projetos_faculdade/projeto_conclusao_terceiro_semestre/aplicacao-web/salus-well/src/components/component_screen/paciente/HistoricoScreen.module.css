@@ -1,0 +1,49 @@
+.main_page {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.filtro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+}
+
+.filtro .botao_filtro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-color: var(--red);
+    border-radius: 16px;
+}
+
+.botao_filtro select {
+    background-color: white;
+    border-radius: 50px;
+    border: none;
+    margin-left: 5px;
+    box-shadow: rgba(0, 0, 0, 0.304) 0px 4px 8px;
+}
+
+.filtro .botao_filtro .combo_box * {
+    background-color: var(--red) !important;
+}
+
+.group_card {
+    overflow: auto;
+    width: 100%;
+    height: 94vh;
+    min-height: min-content;
+    max-height: 450px;
+}
+

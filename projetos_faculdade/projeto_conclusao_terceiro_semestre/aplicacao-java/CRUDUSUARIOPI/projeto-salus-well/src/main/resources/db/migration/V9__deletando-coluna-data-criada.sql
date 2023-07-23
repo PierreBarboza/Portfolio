@@ -1,0 +1,1 @@
+alter table diario_alimentar drop column data_criada;

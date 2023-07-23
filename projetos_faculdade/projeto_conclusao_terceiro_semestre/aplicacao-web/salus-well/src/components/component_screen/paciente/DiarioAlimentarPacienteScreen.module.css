@@ -1,0 +1,69 @@
+.main_user_home_screen {
+    position: relative;
+    top: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 3%;
+    gap: 16px;
+    width: 80%;
+    height: 94vh;
+    border-radius: 16px;
+}
+
+.main_user_home_screen .main_card_user_home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 40%;
+    min-height: 180px;
+    padding: 16px;
+    color: var(--black);
+    border-radius: 16px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 8px;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 80%;
+    border-right: 1px solid var(--opacity-black);
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card .title {
+    color: var(--red);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.main_user_home_screen .main_card_user_home .title_main_card .sub_title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.main_user_home_screen .main_card_user_home .img_main_card {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.main_user_home_screen .main_card_user_home .img_main_card img {
+    width: 100%;
+}
+
+.group_card {
+    overflow: auto;
+    width: 100%;
+    height: 94vh;
+    min-height: min-content;
+    max-height: 450px;
+    border-top: 2px dotted rgba(0, 0, 0, 0.178);
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.178);
+}
