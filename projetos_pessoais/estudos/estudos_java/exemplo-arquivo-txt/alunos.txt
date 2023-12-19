@@ -1,0 +1,18 @@
+00NOTA202327-04-2023 19:51:3601
+02ADS  0122187 Leonardo                                          Estrutura de dados                      09,00005
+02CIS  0122345 Leo                                               Prog. Web                               06,00015
+02SO   0122577 Nardo                                             Socio                                   05,00012
+02Redes0122658 Lucas                                             Socio                                   05,00012
+010000000004
+00NOTA202327-04-2023 20:37:1601
+02ADS  0122187 Leonardo                                          Estrutura de dados                      09,00005
+02CIS  0122345 Leo                                               Prog. Web                               06,00015
+02SO   0122577 Nardo                                             Socio                                   05,00012
+02Redes0122658 Lucas                                             Socio                                   05,00012
+010000000004
+00NOTA202329-04-2023 21:01:1301
+02ADS  0122187 Leonardo                                          Estrutura de dados                      09,00005
+02CIS  0122345 Leo                                               Prog. Web                               06,00015
+02SO   0122577 Nardo                                             Socio                                   05,00012
+02Redes0122658 Lucas                                             Socio                                   05,00012
+010000000004

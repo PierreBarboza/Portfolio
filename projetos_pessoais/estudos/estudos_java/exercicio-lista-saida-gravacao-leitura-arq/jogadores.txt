@@ -1,0 +1,3 @@
+00JOGADORES202329-04-2023 20:53:0201
+020103Pedro                         Ataque         1200,00falsefalse
+010000000001
