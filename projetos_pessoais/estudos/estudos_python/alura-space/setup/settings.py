@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'galeria',
 ]
 
 MIDDLEWARE = [
@@ -54,10 +55,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'setup.urls'
 
-TEMPLATES = [
+TEMPLATES = [ #* Aqui ficam todos os arquivos HTML que são usados para renderizar paginas
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #* No DIR é onde nós importamos asquivos HTML da nossa aplicação
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #* Esse metodo os.path.join é para conseguir acessar os arquivos da pasta template
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +120,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' #* Usamos esta configuração para referência a arquivos estáticos localizados no STATIC_ROOT.
+
+#* Apontando o diretorios dos arquivos estaticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'setup/static'),
+]
+
+#* Caminho absoluto do diretorio para que o python faça a manipulação dos arquivos estaticos (permite usar essas arquivos estaticos)
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+# STATICFILES_FINDERS = [
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
